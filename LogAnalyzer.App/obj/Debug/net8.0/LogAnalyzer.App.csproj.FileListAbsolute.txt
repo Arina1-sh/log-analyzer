@@ -1,0 +1,14 @@
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/bin/Debug/net8.0/LogAnalyzer.App
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/bin/Debug/net8.0/LogAnalyzer.App.deps.json
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/bin/Debug/net8.0/LogAnalyzer.App.runtimeconfig.json
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/bin/Debug/net8.0/LogAnalyzer.App.dll
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/bin/Debug/net8.0/LogAnalyzer.App.pdb
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.GeneratedMSBuildEditorConfig.editorconfig
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.AssemblyInfoInputs.cache
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.AssemblyInfo.cs
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.csproj.CoreCompileInputs.cache
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.dll
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/refint/LogAnalyzer.App.dll
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.pdb
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.genruntimeconfig.cache
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/ref/LogAnalyzer.App.dll
