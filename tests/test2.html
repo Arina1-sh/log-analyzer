@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест 2: Программирование и технологии</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+        .question { margin-bottom: 15px; }
+        .question p { font-weight: bold; }
+        label { display: block; margin: 5px 0; cursor: pointer; }
+        button { display: block; width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #result { margin-top: 20px; font-size: 18px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тест: Программирование и технологии</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Что такое искусственный интеллект (ИИ)?</p>
+                <label><input type="radio" name="q1" value="1"> Область информатики, создающая программы, способные обучаться</label>
+                <label><input type="radio" name="q1" value="0"> Язык программирования</label>
+                <label><input type="radio" name="q1" value="0"> Вид аппаратного обеспечения</label>
+            </div>
+            <div class="question">
+                <p>2. Что относится к анализу данных?</p>
+                <label><input type="radio" name="q2" value="0"> Написание кода</label>
+                <label><input type="radio" name="q2" value="1"> Извлечение полезной информации из данных</label>
+                <label><input type="radio" name="q2" value="0"> Настройка сети</label>
+            </div>
+            <div class="question">
+                <p>3. Машинное обучение — это...</p>
+                <label><input type="radio" name="q3" value="0"> Вид графического редактора</label>
+                <label><input type="radio" name="q3" value="1"> Подход к созданию алгоритмов, которые учатся на данных</label>
+                <label><input type="radio" name="q3" value="0"> Протокол передачи данных</label>
+            </div>
+            <div class="question">
+                <p>4. Какой язык программирования относится к высокоуровневым?</p>
+                <label><input type="radio" name="q4" value="1"> Python</label>
+                <label><input type="radio" name="q4" value="0"> Ассемблер</label>
+                <label><input type="radio" name="q4" value="0"> Машинный код</label>
+            </div>
+            <div class="question">
+                <p>5. Что означает объектно-ориентированный язык?</p>
+                <label><input type="radio" name="q5" value="1"> Программирование строится на объектах и классах</label>
+                <label><input type="radio" name="q5" value="0"> Язык для написания драйверов</label>
+                <label><input type="radio" name="q5" value="0"> Язык для баз данных</label>
+            </div>
+            <div class="question">
+                <p>6. Что такое облачные приложения?</p>
+                <label><input type="radio" name="q6" value="0"> Программы, работающие без интернета</label>
+                <label><input type="radio" name="q6" value="1"> Приложения, размещенные на удаленных серверах</label>
+                <label><input type="radio" name="q6" value="0"> Приложения для мобильных телефонов</label>
+            </div>
+            <div class="question">
+                <p>7. Что означает универсальный язык программирования?</p>
+                <label><input type="radio" name="q7" value="1"> Язык, подходящий для решения широкого круга задач</label>
+                <label><input type="radio" name="q7" value="0"> Язык только для веб-разработки</label>
+                <label><input type="radio" name="q7" value="0"> Язык только для системного программирования</label>
+            </div>
+            <div class="question">
+                <p>8. Что означает высокий уровень безопасности в языке?</p>
+                <label><input type="radio" name="q8" value="0"> Язык защищен паролем</label>
+                <label><input type="radio" name="q8" value="1"> Механизмы защиты от уязвимостей (например, управление памятью)</label>
+                <label><input type="radio" name="q8" value="0"> Язык нельзя взломать</label>
+            </div>
+            <div class="question">
+                <p>9. Что такое полная совместимость?</p>
+                <label><input type="radio" name="q9" value="0"> Программа работает только на одной ОС</label>
+                <label><input type="radio" name="q9" value="1"> Программа работает на разных платформах без изменений</label>
+                <label><input type="radio" name="q9" value="0"> Программа требует обновления</label>
+            </div>
+            <div class="question">
+                <p>10. Что относится к приложению?</p>
+                <label><input type="radio" name="q10" value="0"> Процессор</label>
+                <label><input type="radio" name="q10" value="0"> Операционная система</label>
+                <label><input type="radio" name="q10" value="1"> Текстовый редактор</label>
+            </div>
+            <button type="button" onclick="calculateScore()">Завершить тест</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateScore() {
+            const form = document.getElementById('quizForm');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+            let answered = 0;
+            
+            for (let i = 1; i <= 10; i++) {
+                const selected = form.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answered++;
+                    if (selected.value === "1") {
+                        score++;
+                    }
+                }
+            }
+            
+            if (answered < 10) {
+                resultDiv.innerHTML = `<span style="color: red;">Вы ответили не на все вопросы! Отвечено: ${answered}/10. Попробуйте снова.</span>`;
+                return;
+            }
+            
+            // Блокируем кнопки после завершения (одна попытка)
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => input.disabled = true);
+            document.querySelector('button').disabled = true;
+            document.querySelector('button').style.backgroundColor = '#ccc';
+
+            // Выставление оценки
+            let grade = '2';
+            if (score >= 9) grade = '5';
+            else if (score >= 7) grade = '4';
+            else if (score >= 5) grade = '3';
+            
+            resultDiv.innerHTML = `<span style="color: green;">Тест завершен!</span><br>Правильных ответов: ${score} из 10.<br>Ваша оценка: <strong>${grade}</strong>`;
+        }
+    </script>
+</body>
+</html>

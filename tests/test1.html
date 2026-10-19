@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест 1: Архитектура и сети</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+        .question { margin-bottom: 15px; }
+        .question p { font-weight: bold; }
+        label { display: block; margin: 5px 0; cursor: pointer; }
+        button { display: block; width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #218838; }
+        #result { margin-top: 20px; font-size: 18px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тест: Архитектура и сети</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Что расшифровывается как CPU?</p>
+                <label><input type="radio" name="q1" value="1"> Центральный процессор</label>
+                <label><input type="radio" name="q1" value="0"> Оперативная память</label>
+                <label><input type="radio" name="q1" value="0"> Графический ускоритель</label>
+            </div>
+            <div class="question">
+                <p>2. Какое устройство является энергонезависимой памятью?</p>
+                <label><input type="radio" name="q2" value="0"> RAM</label>
+                <label><input type="radio" name="q2" value="1"> ROM</label>
+                <label><input type="radio" name="q2" value="0"> Кэш</label>
+            </div>
+            <div class="question">
+                <p>3. Что означает аббревиатура BIOS?</p>
+                <label><input type="radio" name="q3" value="0"> Базовая операционная система</label>
+                <label><input type="radio" name="q3" value="1"> Базовая система ввода-вывода</label>
+                <label><input type="radio" name="q3" value="0"> Блок интегрированных операций</label>
+            </div>
+            <div class="question">
+                <p>4. За что отвечает GPU?</p>
+                <label><input type="radio" name="q4" value="1"> Обработка графики</label>
+                <label><input type="radio" name="q4" value="0"> Хранение данных</label>
+                <label><input type="radio" name="q4" value="0"> Сетевое соединение</label>
+            </div>
+            <div class="question">
+                <p>5. Что такое IoT?</p>
+                <label><input type="radio" name="q5" value="0"> Интернет-протокол</label>
+                <label><input type="radio" name="q5" value="0"> Операционная система</label>
+                <label><input type="radio" name="q5" value="1"> Интернет вещей</label>
+            </div>
+            <div class="question">
+                <p>6. Какой протокол обеспечивает надежную передачу данных?</p>
+                <label><input type="radio" name="q6" value="1"> TCP</label>
+                <label><input type="radio" name="q6" value="0"> UDP</label>
+                <label><input type="radio" name="q6" value="0"> IP</label>
+            </div>
+            <div class="question">
+                <p>7. Что делает протокол IP?</p>
+                <label><input type="radio" name="q7" value="0"> Шифрует данные</label>
+                <label><input type="radio" name="q7" value="1"> Маршрутизирует пакеты</label>
+                <label><input type="radio" name="q7" value="0"> Сжимает файлы</label>
+            </div>
+            <div class="question">
+                <p>8. Что такое STL в контексте C++?</p>
+                <label><input type="radio" name="q8" value="0"> Стандартная библиотека шаблонов</label>
+                <label><input type="radio" name="q8" value="1"> Стандартная библиотека шаблонов</label>
+                <label><input type="radio" name="q8" value="0"> Системная библиотека</label>
+            </div>
+            <div class="question">
+                <p>9. Какая память является самой быстрой?</p>
+                <label><input type="radio" name="q9" value="0"> RAM</label>
+                <label><input type="radio" name="q9" value="1"> Регистры процессора</label>
+                <label><input type="radio" name="q9" value="0"> Жесткий диск</label>
+            </div>
+            <div class="question">
+                <p>10. Что из перечисленного относится к устройствам ввода?</p>
+                <label><input type="radio" name="q10" value="0"> Монитор</label>
+                <label><input type="radio" name="q10" value="0"> Принтер</label>
+                <label><input type="radio" name="q10" value="1"> Клавиатура</label>
+            </div>
+            <button type="button" onclick="calculateScore()">Завершить тест</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateScore() {
+            const form = document.getElementById('quizForm');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+            let answered = 0;
+            
+            for (let i = 1; i <= 10; i++) {
+                const selected = form.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answered++;
+                    if (selected.value === "1") {
+                        score++;
+                    }
+                }
+            }
+            
+            if (answered < 10) {
+                resultDiv.innerHTML = `<span style="color: red;">Вы ответили не на все вопросы! Отвечено: ${answered}/10. Попробуйте снова.</span>`;
+                return;
+            }
+            
+            // Блокируем кнопки после завершения (одна попытка)
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => input.disabled = true);
+            document.querySelector('button').disabled = true;
+            document.querySelector('button').style.backgroundColor = '#ccc';
+
+            // Выставление оценки
+            let grade = '2';
+            if (score >= 9) grade = '5';
+            else if (score >= 7) grade = '4';
+            else if (score >= 5) grade = '3';
+            
+            resultDiv.innerHTML = `<span style="color: green;">Тест завершен!</span><br>Правильных ответов: ${score} из 10.<br>Ваша оценка: <strong>${grade}</strong>`;
+        }
+    </script>
+</body>
+</html>
