@@ -1,0 +1,3 @@
+2026-09-01T00:08:59Z|WARN|auth-api|AUTH_LOGIN_OK|User session created
+2026-09-01T00:20:18Z|ERROR|payment-worker|PAYMENT_TIMEOUT|Payment provider timed out
+not-a-timestamp|ERROR|orders-api|ORDER_REJECTED|timestamp is invalid

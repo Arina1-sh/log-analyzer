@@ -12,3 +12,4 @@
 /home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.pdb
 /home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.genruntimeconfig.cache
 /home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/ref/LogAnalyzer.App.dll
+/home/belimenko-a-d/LogAnalyzer/LogAnalyzer.App/obj/Debug/net8.0/LogAnalyzer.App.sourcelink.json
